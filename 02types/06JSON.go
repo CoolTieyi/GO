@@ -27,12 +27,11 @@ func main() {
 	if err != nil {
 		log.Fatalf("JSON marshaling failed: %s", err)
 	}
-	fmt.Printf("%s\n", data)
+	//fmt.Printf("%s\n", data)
 	//Json=>slice  json.Unmarshal()
 	var titles []struct{ Title string }
 	if err := json.Unmarshal(data, &titles); err != nil {
 		log.Fatalf("JSON unmarshaling failed: %s", err)
 	}
-	json.Unmarshal(data, &titles)
 	fmt.Println(titles)
 }
